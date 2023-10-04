@@ -11,9 +11,8 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-
                         <div class="row mb-3">
-                            <label for="documentoId" class="col-md-4 col-form-label text-md-end">{{ __('Documento de Identidad') }}</label>
+                            <label for="documentoId" class="col-md-4 col-form-label text-md-end">{{ __('Identification Document') }}</label>
 
                             <div class="col-md-6">
                                 <input id="documentoId" type="text" class="form-control @error('documentoId') is-invalid @enderror" name="documentoId" value="{{ old('documentoId') }}" required autocomplete="documentoId" autofocus>
@@ -27,7 +26,7 @@
                         </div>                        
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -41,7 +40,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="surname" class="col-md-4 col-form-label text-md-end">{{ __('Apellidos') }}</label>
+                            <label for="surname" class="col-md-4 col-form-label text-md-end">{{ __('Surname') }}</label>
 
                             <div class="col-md-6">
                                 <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
