@@ -1,0 +1,16 @@
+manual de REACT y LARAVEL
+
+	INSTALACION LARAVEL
+-composer create-project laravel/laravel diremp
+	INSTALACION BOOTSTRAP
+-composer require laravel/ui
+-php artisan ui bootstrap
+	INSTALACION REACT
+-php artisan ui react
+-npm install	// si sale error ejecutamos el otro comando
+-npm install force
+ 
+nuestro archivos react esta en:
+
+/resources/js/components
+	Example.jsx

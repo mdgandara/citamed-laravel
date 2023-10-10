@@ -1,0 +1,4 @@
+Solucion carga de proyacto citame-laravel
+1-creamos base de datos miramos .env
+2-importamos base de datos
+3-instalamos Vite con la terminal-> npm run build
