@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\appointment;
 
 
 /*
@@ -19,10 +20,17 @@ Route::get('/', function () {
     return view('starts.start');
 });
 
+Route::get('/react', function () {
+    return view('welcome');
+})->name('react');
 
 Auth::routes();
+//Appointment::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/appointment', [App\Http\Controllers\AppointmentController::class, 'index'])->name('appointment');
+//Route::get('/appointment', 'AppointmentController@index')->name('appointment');
+
 
 /*
 Auth::routes();

@@ -1,4 +1,6 @@
 {
+    "Start":"Inicio",
+    "Appointment": "Cita",
     "The documento id has already been taken.": "El ID del documento ya ha sido tomado",
     "Identification Document": "Documento de Identidad",
     "Surname": "Apellidos",

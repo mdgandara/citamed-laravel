@@ -1,7 +1,7 @@
 manual de REACT y LARAVEL
 
 	INSTALACION LARAVEL
--composer create-project laravel/laravel diremp
+-composer create-project laravel/laravel prueba-react
 	INSTALACION BOOTSTRAP
 -composer require laravel/ui
 -php artisan ui bootstrap
@@ -14,3 +14,4 @@ nuestro archivos react esta en:
 
 /resources/js/components
 	Example.jsx
+	EXITO

@@ -14,7 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-   
+    
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
@@ -39,6 +39,18 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
+                            <!-- Menu principal -->
+                            @if (Route::has('react'))
+                                <li class="nav-item">
+                                    <a class="nav-link btn btn-sm btn-outline-secondary" href="{{ route('react') }}">{{ __('React') }}</a>
+                                </li>
+                            @endif 
+
+                            @if (Route::has('appointment'))
+                                <li class="nav-item">
+                                    <a class="nav-link btn btn-sm btn-outline-secondary" href="{{ route('appointment') }}">{{ __('Appointment') }}</a>
+                                </li>
+                            @endif
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link btn btn-sm btn-outline-secondary" href="{{ route('login') }}">{{ __('Login') }}</a>

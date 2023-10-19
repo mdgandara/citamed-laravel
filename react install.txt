@@ -1,0 +1,13 @@
+crear proyecto
+
+composer create-project laravel/laravel laravel-react
+
+entrar al proyecto
+
+cd laravel-react
+
+php artisan ui bootstrap
+php artisan ui react
+
+npm install
+npm install --force

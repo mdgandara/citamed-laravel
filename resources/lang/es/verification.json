@@ -1,4 +1,5 @@
 {
+    "Appointment": "Cita",
     "The documento id has already been taken.": "El ID del documento ya ha sido tomado",
     "accepted": "Este campo debe ser aceptado.",
     "accepted_if": "Este campo debe ser aceptado cuando :other sea :value.",

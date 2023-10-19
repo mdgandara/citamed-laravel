@@ -1,4 +1,5 @@
 {
+    
     "The documento id has already been taken.": "El ID del documento ya ha sido tomado",
     "accepted": "El campo :attribute debe ser aceptado.",
     "accepted_if": "El campo :attribute debe ser aceptado cuando :other sea :value.",

@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-function Example() {
+function Example2() {
     return (
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <div className="card-header">Ejemplo de React PRIMER EJEMPLO </div>
+                        <div className="card-header">Ejemplo de React 2 </div>
 
-                        <div className="card-body">soy GROO!</div>
+                        <div className="card-body"> Prueba dos!</div>
                     </div>
                 </div>
             </div>
@@ -17,14 +17,14 @@ function Example() {
     );
 }
 
-export default Example;
+export default Example2;
 
-if (document.getElementById('root')) {
-    const Index = ReactDOM.createRoot(document.getElementById("root"));
+if (document.getElementById('root2')) {
+    const Index = ReactDOM.createRoot(document.getElementById("root2"));
 
     Index.render(
         <React.StrictMode>
-            <Example/>
+            <Example2/>
         </React.StrictMode>
     )
 }
