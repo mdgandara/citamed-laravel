@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 function Example2() {
+    
     return (
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <div className="card-header">Ejemplo de React 2 </div>
+                        <div className="card-header">Ejemplo de React es chevre </div>
 
-                        <div className="card-body"> Prueba dos!</div>
+                        <div className="card-body"> Prueba maxima!</div>
                     </div>
                 </div>
             </div>

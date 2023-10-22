@@ -9,7 +9,7 @@ function Example() {
                     <div className="card">
                         <div className="card-header">Ejemplo de React PRIMER EJEMPLO </div>
 
-                        <div className="card-body">soy GROO!</div>
+                        <div className="card-body">soy GROO y que!</div>
                     </div>
                 </div>
             </div>
