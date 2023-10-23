@@ -1,0 +1,62 @@
+Entramos a nuestro proyecto en la consola
+php artisan make:migration create_citas_table
+php artisan make:migration create_user_cita_table 
+
+nuestra tabla users ya esta creada
+
+/databases/migrations **esta ubicados mis migraciones**
+abrimos citas
+
+quitamos $table->timestamps();
+
+En user_cita queda asi:
+opcion 1
+public function up(): void {
+        Schema::create('user_cita', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')
+                    ->nullable()
+                    ->constrained('users')
+                    ->cascadeOnUpdate()
+                    ->nullOnDelete();
+            $table->foreignId('cita_id')
+                    ->nullable()
+                    ->constrained('citas')
+                    ->cascadeOnUpdate()
+                    ->nullOnDelete();
+        });
+    
+     }
+opcion 2
+    public function up(): void {
+                Schema::create('user_cita', function (Blueprint $table) {
+                    $table->id();
+                    $table->unsignedBigInteger('user_id');
+                    $table->unsignedBigInteger('cita_id');
+                    $table->timestamps();
+                });
+            
+                Schema::table('user_cita', function (Blueprint $table) {
+                    $table->foreign('user_id')->references('id')->on('users');
+                    $table->foreign('cita_id')->references('id')->on('citas');
+                });
+            }
+En citas:
+    public function up(): void {
+        Schema::create('citas', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id'); // Clave foránea para relacionar la cita con el usuario
+            $table->dateTime('fecha_cita');
+            $table->text('descripcion');
+          //  $table->timestamps();
+        });
+    
+        Schema::table('citas', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users');
+        });
+    }
+
+EJECUTAMOS LA MIGRACION 
+
+php artisan migrate
+si sale un error en la migracion puedo usar el comando php artisan migrate:rollback
