@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -21,8 +22,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
     {
-        return view('home');
+        $usuarios = DB::table('users')->get(); //igual a un SELECT mysql
+        return view('home', [
+            'usuarios' => $usuarios
+        ]);
+        
     }
 }

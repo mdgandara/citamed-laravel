@@ -1,30 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React, { useState, useEffect } from "react";
+import createRoot from "react-dom/client";
 
-function Example() {
-    return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Ejemplo de React PRIMER EJEMPLO </div>
 
-                        <div className="card-body">soy GROO y que!</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+function MyComponent() {
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/");
+      const data = await response.json();
+
+      setUsuarios(data.usuarios);
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      {usuarios.map((usuario) => (
+        <h1>{usuario.name}</h1>
+      ))}
+    </div>
+  );
 }
 
-export default Example;
+const Index = createRoot(document.getElementById("root"));
 
-if (document.getElementById('root')) {
-    const Index = ReactDOM.createRoot(document.getElementById("root"));
-
-    Index.render(
-        <React.StrictMode>
-            <Example/>
-        </React.StrictMode>
-    )
-}
+Index.render(
+  <React.StrictMode>
+    <MyComponent />
+  </React.StrictMode>
+);

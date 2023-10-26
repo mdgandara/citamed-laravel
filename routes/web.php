@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\RelacionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\appointment;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
 
 
 /*
@@ -16,6 +20,14 @@ use Illuminate\Support\Facades\appointment;
 |
 */
 
+Route::get("/users", function () {
+    $users = DB::table("users")->get();
+  
+    return response()->json($users);
+  });
+  
+//INICIO
+
 Route::get('/', function () {
     return view('starts.start');
 });
@@ -24,16 +36,12 @@ Route::get('/react', function () {
     return view('welcome');
 })->name('react');
 
+// todas las rutas de autenticacion
+
 Auth::routes();
 //Appointment::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/appointment', [App\Http\Controllers\AppointmentController::class, 'index'])->name('appointment');
-//Route::get('/appointment', 'AppointmentController@index')->name('appointment');
+Route::get('/p', [App\Http\Controllers\HomeReactController::class, 'index'])->name('p');
 
-
-/*
-Auth::routes();
-
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-*/

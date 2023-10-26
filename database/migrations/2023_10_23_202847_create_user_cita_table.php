@@ -8,20 +8,24 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * 
      */
     public function up(): void {
         Schema::create('user_cita', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('cita_id');
-            $table->timestamps();
+            $table->foreignId('user_id')
+                    ->nullable()
+                    ->constrained('users')
+                    ->cascadeOnUpdate()
+                    ->nullOnDelete();
+            $table->foreignId('cita_id')
+                    ->nullable()
+                    ->constrained('citas')
+                    ->cascadeOnUpdate()
+                    ->nullOnDelete();
         });
     
-        Schema::table('user_cita', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('cita_id')->references('id')->on('citas');
-        });
-    }
+     }
     
 
     /**
