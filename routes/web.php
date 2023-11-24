@@ -38,7 +38,7 @@ Route::get('/react', function () {
 
 // todas las rutas de autenticacion
 
-Auth::routes();
+//Auth::routes();
 //Appointment::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
